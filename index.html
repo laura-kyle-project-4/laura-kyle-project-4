@@ -3,11 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project 4</title>
+    <title>The Studio Ghibli Search Engine</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>This change is from the update-homepage branch</h1>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="script.js"></script>
+    <header>
+        <h1>Welcome to the Studio Ghibli search engine!</h1>
+    </header>
+    <main>
+        <section>
+            <div class="wrapper">
+                <div class="search-section"> 
+                    <form action="">
+                        <fieldset>
+                        
+                            <div class="search-bar">
+
+                                <label for="user-input">Please enter a keyword to find a Studio Ghibli film:</label>
+                                <input type="text" id="user-input" name="user-input" minlength="2" aria-label="Please enter a keyword to find a Studio Ghibli film:">
+                            
+                            </div>
+
+                            <div class="search-button">
+
+                                <button id="search"><a href="#results">Find me a movie!</a></button> 
+
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id ="results">
+            <div class="wrapper">
+                <div class="search-results">
+                    <ul>
+
+                        <!-- content to be added dynamically -->
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><a href="http://junocollege.com/">Created at Juno College</a> by <a href="https://lstanley24.github.io/">Laura Stanley</a> and <a href="https://github.com/kwongz">Kyle Wong</a></p>
+    </footer>
+
+    <!-- Jquery library + link to JavaScript file  -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
