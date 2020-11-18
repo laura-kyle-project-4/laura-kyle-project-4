@@ -1,0 +1,25 @@
+.search-section {
+    height: 50vh;
+}
+
+.search-bar,
+.search-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+label {
+    font-size: 3rem;
+}
+
+[type=text] {
+    padding: 0 50px;
+    font-size: 3rem;
+}
+
+button {
+    font-size: 3rem;
+}
+

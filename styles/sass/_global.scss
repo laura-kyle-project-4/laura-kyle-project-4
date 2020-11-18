@@ -1,0 +1,60 @@
+// Colours 
+
+$primary-colour: #82c1ec;
+$secondary-colour: #fdf98f;
+$text-colour: #000000;
+$text-hover: #ecad82;
+
+// General styles
+
+* { 
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+
+.wrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 0;
+}
+
+p {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+a:hover,
+a:focus {
+    color: $text-hover;
+
+}
