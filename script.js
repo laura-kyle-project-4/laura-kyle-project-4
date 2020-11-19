@@ -13,40 +13,72 @@ app.appUrl = "https://ghibliapi.herokuapp.com"
 
 app.apiUrl = 'https://ghibliapi.herokuapp.com';
 
-app.getGhibli = (topic) => {
+app.getGhibli = (input) => {
     $.ajax({
-        url: `https://ghibliapi.herokuapp.com/${topic}`,
+        url: `https://ghibliapi.herokuapp.com/species?name=${input}`,
         method: 'GET',
         dataType: 'json',
-    }).then((ghibiliInfo) => {
-        app.showGhibli(ghibiliInfo);
+    }).then((results) => {
+        console.log(results)
+        app.showGhibli(results);
     })
 }
 
 // create an event listener, when the user clicks on the search button the value of the input[type:text].val will be stored in a variable userInput
 // userInput will be used as a argument in a method that searches through the getGhibli array
 
-
 // create a method that will take the user's input and search for it through the API's title and description
-app.showGhibli = (ghibiliInfo) => {
-    console.log(ghibiliInfo);
+app.showGhibli = () => {
+   
         $('#search').on('click', (e) => {
             e.preventDefault();
-            console.log('click');
             const keyword = $('#user-input').val();
+            app.getGhibli(keyword)
             console.log(keyword)
-            for (let i=0;i<=ghibiliInfo.length;i++) {
-                for(key in ghibiliInfo[i]) {
-                    if(ghibiliInfo[i][key]){
-                        console.log('yes')
-                    }
-                }
-            }
+
+          
+            // if (ghibliInfo.includes(keyword)) {
+            //     console.log("HEY!")
+
+            // }
+
+
+            
+            // for (let i=0;i<=ghibiliInfo.length;i++) {
+            //     for(key in ghibiliInfo[i]) {
+            //         if(ghibiliInfo[i][key]){
+            //             console.log('yes')
+            //         }
+            //     }
+            // }
             })
+        }
+
+        app.displayGhibli = (info) => {
+            console.log(info)
+
+
+            info.forEach(stuff => {
+                console.log(stuff)
+
+
+            })
+
+
         }
 
 
 
+// console.log('click');
+// const keyword = $('#user-input').val();
+// console.log(keyword)
+
+// ghibiliInfo.forEach(film => {
+//     console.log(film)
+
+
+
+// })
 
 
 
