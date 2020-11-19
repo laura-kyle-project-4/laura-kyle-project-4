@@ -33,24 +33,41 @@ app.showGhibli = (ghibiliInfo) => {
         $('#search').on('click', (e) => {
             e.preventDefault();
             console.log('click');
-            const keyword = $('#user-input').val();
+            const keyword = $('#user-input').val().toLowerCase();
             console.log(keyword)
-            for (let i=0;i<=ghibiliInfo.length;i++) {
-                for(key in ghibiliInfo[i]) {
-                    if(ghibiliInfo[i][key]){
-                        console.log('yes')
-                    }
+            for (let i=0;i<ghibiliInfo.length;i++) {
+                const filmTitle = ghibiliInfo[i].title.toLowerCase();
+            
+                if(filmTitle.includes(keyword)){
+
+                    console.log(ghibiliInfo[i])
+
+                    // ghibiliInfo[i].forEach((film) => { 
+                    //     let ghibiliResults = `
+                    //         <li>
+                    //             <h2>${film.title}</h2>
+                    //             <div class ="film-title">
+    
+                    //                 <p>${film.rt_score}</p>
+                    //                 <p>${film.release_date}</p>
+    
+                    //             </div>
+                    //         </li>
+                    //     `
+                        // $("#results-container").append(ghibiliResults);
+    
+                        // console.log(ghibiliInfo[i])
+                        
+
+                    // })
+                    
+                } else {
+                    console.log("Boooo")
                 }
+                
             }
-            })
-        }
-
-
-
-
-
-
-
+        })
+}
 
 
 app.init = function() {
