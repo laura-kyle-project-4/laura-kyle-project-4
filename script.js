@@ -19,21 +19,35 @@ app.getGhibli = (topic) => {
         method: 'GET',
         dataType: 'json',
     }).then((ghibiliInfo) => {
-        console.log(ghibiliInfo);
         app.showGhibli(ghibiliInfo);
     })
 }
 
 // create an event listener, when the user clicks on the search button the value of the input[type:text].val will be stored in a variable userInput
-// userInput will be used as a argument in a method that searches through the getGhibli array 
-
-
+// userInput will be used as a argument in a method that searches through the getGhibli array
 
 
 // create a method that will take the user's input and search for it through the API's title and description
 app.showGhibli = (ghibiliInfo) => {
-    console.log(ghibiliInfo[0].title);
-}
+    console.log(ghibiliInfo);
+        $('#search').on('click', (e) => {
+            e.preventDefault();
+            console.log('click');
+            const keyword = $('#user-input').val();
+            console.log(keyword)
+            for (let i=0;i<=ghibiliInfo.length;i++) {
+                for(key in ghibiliInfo[i]) {
+                    if(ghibiliInfo[i][key]){
+                        console.log('yes')
+                    }
+                }
+            }
+            })
+        }
+
+
+
+
 
 
 
