@@ -36,30 +36,28 @@ app.showGhibli = (ghibiliInfo) => {
             const keyword = $('#user-input').val().toLowerCase();
             console.log(keyword)
             for (let i=0;i<ghibiliInfo.length;i++) {
+                
                 const filmTitle = ghibiliInfo[i].title.toLowerCase();
+                const filmDescription = ghibiliInfo[i].description.toLowerCase();
             
-                if(filmTitle.includes(keyword)){
+                if(filmTitle.includes(keyword) || filmDescription.includes(keyword)) {
 
-                    console.log(ghibiliInfo[i])
+                    let ghibiliResults = `
+                            <li>
+                                <h2>${filmTitle}</h2>
+                                <div class ="film-title">
 
-                    // ghibiliInfo[i].forEach((film) => { 
-                    //     let ghibiliResults = `
-                    //         <li>
-                    //             <h2>${film.title}</h2>
-                    //             <div class ="film-title">
+                                    <p>${ghibiliInfo[i].rt_score}</p>
+                                    <p>${ghibiliInfo[i].release_date}</p>
     
-                    //                 <p>${film.rt_score}</p>
-                    //                 <p>${film.release_date}</p>
     
-                    //             </div>
-                    //         </li>
-                    //     `
-                        // $("#results-container").append(ghibiliResults);
+                                </div>
+                            </li>
+                        `
+                        $("#results-container").append(ghibiliResults);
     
-                        // console.log(ghibiliInfo[i])
+                        console.log(ghibiliInfo[i])
                         
-
-                    // })
                     
                 } else {
                     console.log("Boooo")
@@ -68,6 +66,7 @@ app.showGhibli = (ghibiliInfo) => {
             }
         })
 }
+
 
 
 app.init = function() {
