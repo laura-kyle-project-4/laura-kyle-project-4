@@ -23,3 +23,20 @@ button {
     font-size: 3rem;
 }
 
+.search-results {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%
+    
+}
+
+.film-title p {
+    width: 50%;
+    text-align: center;
+
+
+}
+.search-results li {
+   width: 50%
+
+}

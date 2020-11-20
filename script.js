@@ -2,16 +2,45 @@
 
 const app = {}
 
+
+// Poster object containing all of the posters of the Ghibli films 
+
+const ghibliPosters = {
+    "castle in the sky": "red",
+    "grave of the fireflies": "green",
+    "my neighbor totoro": "black",
+    "kiki's delivery service": "blah",
+    "only yesterday": "yellow",
+    "porco rosso": "white",
+    "pom poko": "purple",
+    "whisper of the heart": "teal",
+    "princess mononoke": "grey",
+    "my neighbors the yamadas": "pink",
+    "spirited away": "orange",
+    "the cat returns": "brown",
+    "howl's moving castle": "another colour!",
+    "tales from earthsea": "stuff!",
+    "ponyo": "more stuff!",
+    "arrietty": "even more stuff",
+    "from up on poppy hill":"wow, stuff",
+    "the wind rises": "hi kyle",
+    "the tale of the princess kaguya": "Kyle!",
+    "when marnie was there": "what's up?"
+}
+
+console.log(ghibliPosters["castle in the sky"])
+
 // store our api key in our app object
 
 // store end point in app object
 
-app.appUrl = "https://ghibliapi.herokuapp.com"
+// app.appUrl = "https://ghibliapi.herokuapp.com"
 
-// define a method  on our app object which will make a asynchronous request for our API films
-// create .then to call app
+// // define a method  on our app object which will make a asynchronous request for our API films
+// // create .then to call app
 
-app.apiUrl = 'https://ghibliapi.herokuapp.com';
+// app.apiUrl = 'https://ghibliapi.herokuapp.com';
+
 
 app.getGhibli = (topic) => {
     $.ajax({
@@ -57,10 +86,11 @@ app.showGhibli = (ghibiliInfo) => {
                         $("#results-container").append(ghibiliResults);
     
                         console.log(ghibiliInfo[i])
-                        
-                    
+                        console.log(filmTitle)
+                        console.log(ghibliPosters[filmTitle])
+                   
                 } else {
-                    console.log("Boooo")
+                    
                 }
                 
             }

@@ -285,6 +285,15 @@ a:focus {
   color: #ecad82;
 }
 
+h2 {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 header {
   background-color: #82c1ec;
   height: 50vh;
@@ -330,6 +339,26 @@ label {
 
 button {
   font-size: 3rem;
+}
+
+.search-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  max-width: 100%;
+}
+
+.film-title p {
+  width: 50%;
+  text-align: center;
+}
+
+.search-results li {
+  width: 50%;
 }
 
 footer {
