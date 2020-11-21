@@ -1,42 +1,69 @@
 .search-section {
-    height: 50vh;
+  height: 50vh;
 }
 
 .search-bar,
 .search-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 label {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
-[type=text] {
-    padding: 0 50px;
-    font-size: 3rem;
+[type="text"] {
+  padding: 0 50px;
+  font-size: 3rem;
 }
 
 button {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .search-results {
-    display: flex;
-    flex-direction: row;
-    max-width: 100%
-    
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
 }
 
 .film-title p {
-    width: 50%;
-    text-align: center;
-
-
+  width: 50%;
+  text-align: center;
 }
 .search-results li {
-   width: 50%
+  width: 50%;
+}
 
+.error-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: $primary-colour, $alpha: 0.85);
+}
+
+.error-results div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $secondary-colour;
+}
+
+.error-results figure {
+  width: 50%;
+}
+
+.error-results button {
+  margin-bottom: 30px;
 }
