@@ -1,8 +1,9 @@
 // Colours
 
-$primary-colour: #82c1ec;
-$secondary-colour: #fdf98f;
-$text-colour: #000000;
+$primary-colour: #14aeed;
+$secondary-colour: #02295d;
+$primary-text: #000000;
+$secondary-text: #ffffff;
 $text-hover: #ecad82;
 
 // Font-families
@@ -33,7 +34,7 @@ a {
 
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 
@@ -53,8 +54,9 @@ fieldset {
 
 p {
   font-family: $text;
+  color: $primary-text;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 a:hover,
@@ -62,22 +64,9 @@ a:focus {
   color: $text-hover;
 }
 
-h2 {
-  font-family: $heading;
-  font-size: 5rem;
-  text-align: center;
-  color: $text-colour;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-family: $text;
-  font-size: 3rem;
-  padding: 30px 0px;
-  width: 80%;
-}
-
 button {
   padding: 15px 10px;
+  font-size: 3rem;
+  border: none;
+
 }

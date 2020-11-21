@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to the Studio Ghibli search engine!</h1>
+        <h1>Explore the Studio Ghibli Universe!</h1>
     </header>
     <main>
         <section>
@@ -20,18 +20,12 @@
                 <div class="search-section"> 
                     <form action="">
                         <fieldset>
-                        
                             <div class="search-bar">
-
                                 <label for="user-input">Please enter a keyword to find a Studio Ghibli film:</label>
                                 <input type="text" id="user-input" name="user-input" minlength="2" aria-label="Please enter a keyword to find a Studio Ghibli film:">
-                            
                             </div>
-
                             <div class="search-button">
-
                                 <button id="search"><a href="#results">Find me a movie!</a></button> 
-
                             </div>
                         </fieldset>
                     </form>
@@ -45,16 +39,19 @@
                         <!-- content to be added dynamically -->
                     </ul>
                 </div>
+                <!-- content for pop-up that appears on the site when an error has occured  -->
                 <div class="error-results" id="error-results">
                     <div>
                         <h3>Sorry, no results found</h3>
                         <figure>
                             <img src="./assets/error.gif" alt="a Ghibli character beings squished by a piece of coal">
                         </figure>
-                        <h3>Please try words like "castle" or "witch"</h3>
+                        <h3>Please try another word like "castle" or "witch"</h3>
                         <button id="agree" class="agree">Okay, I understand</button>
                     </div>
                 </div>
+                <!-- content for film description pop-up that will be added dynamically -->
+                <div class="description-box" id="description-box"></div>
             </div>
         </section>
     </main>
