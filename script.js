@@ -1,8 +1,9 @@
 // create namespace object
 const app = {}
-// this hides the error message + description pop-up until its called on in the if conditional statement
+// this hides the error message + description + search h2 pop-up until its called on in the if conditional statement
 $('#error-results').hide();
 $('#description-box').hide();
+$('#search-results h2').hide()
 // Poster object containing all of the posters of the Ghibli films 
 const ghibliPosters = {
     "castle in the sky": "./assets/castle.jpg",
@@ -57,9 +58,11 @@ app.showGhibli = (ghibiliInfo) => {
             // Error proofing: create a conditional that states if nothing (an empty string) is entered into the search bar, the error pop-up menu is triggered.
             if (keyword === '' || keyword === '!') { 
                 $('#error-results').show();
+                $('#search-results h2').hide()
                 // create a conditional stating if the film title or description values match the keyword variable that was inputed by the user, display the film title, poster, rotten tomatoe score and year filmed
             }  else if (filmTitle.includes(keyword) || filmDescription.includes(keyword)) {
-                let ghibiliResults = `
+                let ghibiliResults = 
+                `
                         <li>
                         <figure><img src=${ghibliPosters[filmTitle]} alt="${filmTitle} poster"></figure>
                             <div class ="film-title">
@@ -68,14 +71,17 @@ app.showGhibli = (ghibiliInfo) => {
                                 <p>Release Date: ${ghibiliInfo[i].release_date}</p>
                             </div>
                         </li>
-                    `
+                `
+                //append instructions to click movie poster for description         
                 // append elements to the results section
+                $('#search-results h2').show()
                 $("#results-container").append(ghibiliResults);
                 // If no results are found, error pop-up is triggered.  
             } else {
                 noResults = noResults + 1
                 if (noResults === ghibiliInfo.length){
                     $('#error-results').show();
+                    $('#search-results h2').hide()
                 }
             }
         }
@@ -86,12 +92,16 @@ app.showGhibli = (ghibiliInfo) => {
 }
 app.showGhibliDescription = (ghibiliInfo) => { 
     console.log(ghibiliInfo);
+
 // create event listener on image ul that triggers film description pop-up 
     $('#results-container').on('click', 'li', function(){
+        // create a variable to store the value of the poster's title the user clicks on
         let descriptionFilmTitle = $(this).find("h2").text();
+            // create a for loop that will search for the movies description using the poster's title the user clicked on and use the above variable to search through the array to find the object containing all the film details.
             for (let i = 0; i < ghibiliInfo.length; i++) {
                 const filmTitle = ghibiliInfo[i].title.toLowerCase();
             if (filmTitle.includes(descriptionFilmTitle)) {
+                // display the details to a pop-up menu
                 let insertDescription = `
                     <div>
                         <h2>${ghibiliInfo[i].title}</h2>
@@ -113,9 +123,11 @@ app.showGhibliDescription = (ghibiliInfo) => {
         $('#agree').on('click', function () {
             $('#error-results').hide();
         })
-    app.init = function() {
-        app.getGhibli('films');
+
+app.init = function() {
+    app.getGhibli('films');
     }
+
 $(function() {
     app.init();
 });

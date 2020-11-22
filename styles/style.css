@@ -414,6 +414,13 @@ header span {
   h1 {
     font-size: 4rem;
   }
+  .soot-1 {
+    right: -50px;
+  }
+  .soot-1 img {
+    -webkit-transform: rotate(-85deg);
+            transform: rotate(-85deg);
+  }
   .soot-3 {
     left: 30px;
   }
@@ -467,7 +474,11 @@ h2 {
   text-align: center;
   color: #000000;
   font-weight: 800;
-  text-transform: uppercase;
+  padding: 25px 25px;
+}
+
+.search-results h2 {
+  padding-bottom: 50px;
 }
 
 .search-results ul {
@@ -501,9 +512,11 @@ h2 {
   margin: 0 auto 100px;
 }
 
-h3 {
-  font-size: 3rem;
-  padding: 30px 0px;
+.film-title h2 {
+  text-transform: uppercase;
+}
+
+.error-results h2 {
   width: 80%;
 }
 
@@ -550,9 +563,7 @@ h3 {
 
 .description-box div {
   width: 75%;
-  height: 700px;
-  overflow-y: scroll;
-
+  max-height: 700px;
 }
 
 .error-results div {
@@ -567,19 +578,21 @@ h3 {
 
 .error-results button,
 .description-box button {
-  margin-bottom: 30px;
+  margin: 25px 0px;
 }
 
 .description-box p {
   font-size: 2rem;
   font-style: italic;
-  padding: 25px;
   line-height: 40px;
   text-transform: lowercase;
+  padding: 0px 25px;
 }
 
-.description-box h2 {
-  padding-top: 25px;
+@media (max-width: 780px) {
+  .description-box p {
+    overflow-y: scroll;
+  }
 }
 
 @media (max-width: 550px) {
@@ -593,7 +606,7 @@ h3 {
   .description-box p {
     font-size: 1.6rem;
   }
-  h3 {
+  h2 {
     font-size: 2.2rem;
   }
 }

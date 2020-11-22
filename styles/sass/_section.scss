@@ -32,7 +32,6 @@ fieldset {
   text-align: center;
 }
 
-
 // Styles for dynamically added results section
 
 h2 {
@@ -41,7 +40,11 @@ h2 {
   text-align: center;
   color: $primary-text;
   font-weight: 800;
-  text-transform: uppercase;
+  padding: 25px 25px;
+}
+
+.search-results h2 {
+  padding-bottom: 50px;
 }
 
 .search-results ul {
@@ -70,11 +73,13 @@ h2 {
   margin: 0 auto 100px;
 }
 
+.film-title h2 {
+  text-transform: uppercase;
+}
+
 // Error + film description pop-up styles
 
-h3 {
-  font-size: 3rem;
-  padding: 30px 0px;
+.error-results h2 {
   width: 80%;
 }
 
@@ -89,7 +94,6 @@ h3 {
   height: 100vh;
   width: 100vw;
   background-color: rgba($color: $primary-colour, $alpha: 0.85);
-
 }
 
 .error-results div,
@@ -107,8 +111,7 @@ h3 {
 
 .description-box div {
   width: 75%;
-  height: 700px;
-  overflow-y: scroll;
+  max-height: 700px;
 }
 
 .error-results div {
@@ -123,22 +126,24 @@ h3 {
 
 .error-results button,
 .description-box button {
-  margin-bottom: 30px;
+  margin: 25px 0px;
 }
 
 .description-box p {
   font-size: 2rem;
   font-style: italic;
-  padding: 25px;
   line-height: 40px;
   text-transform: lowercase;
-}
-
-.description-box h2 {
-  padding-top: 25px;
+  padding: 0px 25px;
 }
 
 // Responsive styles
+
+@media (max-width: 780px) {
+  .description-box p {
+    overflow-y: scroll;
+  }
+}
 
 @media (max-width: 550px) {
   input[type="text"] {
@@ -154,7 +159,7 @@ h3 {
     font-size: 1.6rem;
   }
 
-  h3 {
+  h2 {
     font-size: 2.2rem;
   }
 }
