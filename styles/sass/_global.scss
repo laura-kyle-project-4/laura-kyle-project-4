@@ -26,6 +26,7 @@ html {
 
 body {
   font-size: 3rem;
+  overflow-x: hidden;
 }
 
 ul {
@@ -91,7 +92,6 @@ button:focus {
   border: 5px solid $secondary-colour;
   cursor: pointer;
 }
-
 
 // Responsive styles
 
