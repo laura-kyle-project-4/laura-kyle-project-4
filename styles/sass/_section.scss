@@ -32,6 +32,7 @@ fieldset {
   text-align: center;
 }
 
+
 // Styles for dynamically added results section
 
 h2 {
@@ -87,6 +88,7 @@ h3 {
   height: 100vh;
   width: 100vw;
   background-color: rgba($color: $primary-colour, $alpha: 0.85);
+
 }
 
 .error-results div,
@@ -97,13 +99,15 @@ h3 {
   align-items: center;
   margin: 0 auto;
   text-align: center;
-  background-color: #86dcd1;
+  background-color: $box-background-colour;
   color: $primary-text;
   border: 5px solid black;
 }
 
 .description-box div {
   width: 75%;
+  height: 700px;
+  overflow-y: scroll;
 }
 
 .error-results div {

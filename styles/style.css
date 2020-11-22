@@ -335,7 +335,6 @@ h1 {
   font-family: "Nanum Gothic", sans-serif;
   font-size: 7rem;
   color: #ffffff;
-  color: white;
   font-weight: 800;
   text-align: center;
   width: 100%;
@@ -550,6 +549,9 @@ h3 {
 
 .description-box div {
   width: 75%;
+  height: 700px;
+  overflow-y: scroll;
+
 }
 
 .error-results div {
