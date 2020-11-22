@@ -2,6 +2,7 @@
 
 $primary-colour: #14aeed;
 $secondary-colour: #02295d;
+$box-background-colour: #86dcd1;
 $primary-text: #000000;
 $secondary-text: #ffffff;
 $text-hover: #ecad82;
@@ -21,6 +22,10 @@ $text: "Noto Sans KR", sans-serif;
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+body {
+  font-size: 3rem;
 }
 
 ul {
@@ -44,7 +49,7 @@ figure {
 
 .wrapper {
   max-width: 1280px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -56,17 +61,47 @@ p {
   font-family: $text;
   color: $primary-text;
   font-weight: 400;
-  font-size: 3rem;
-}
-
-a:hover,
-a:focus {
-  color: $text-hover;
 }
 
 button {
-  padding: 15px 10px;
-  font-size: 3rem;
+  padding: 15px 15px;
   border: none;
+  background-color: $primary-colour;
+  border-radius: 15px;
+  border: 5px solid $primary-colour;
+}
 
+// hover focus states
+a:hover,
+a:focus {
+  color: $primary-text;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: $secondary-colour;
+  border: 5px solid #000000;
+  color: $text-hover;
+  cursor: pointer;
+}
+
+.search-results li figure:hover,
+.search-results li figure:focus {
+  border: 5px solid $secondary-colour;
+  cursor: pointer;
+}
+
+// Responsive styles
+
+@media (max-width: 760px) {
+  body {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 550px) {
+  button {
+    font-size: 2rem;
+    padding: 10px 5px;
+  }
 }

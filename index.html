@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Studio Ghibli Search Engine</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -12,7 +13,18 @@
 </head>
 <body>
     <header>
-        <h1>Explore the Studio Ghibli Universe!</h1>
+        <div class="wrapper">
+            <h1>Explore the <span>Studio Ghibli Universe!</span></h1>
+            <figure class="soot-1 animate__animated animate__slower animate__pulse animate__infinite">
+                <img src="./assets/noun_Dust Bunny_39107.png" alt="a black soot character from the studio Ghibli Universe">
+            </figure>
+            <figure class="soot-2 animate__animated animate__slower animate__pulse animate__infinite">
+                <img src="./assets/noun_Dust Bunny_39107.png" alt="a black soot character from the studio Ghibli Universe">
+            </figure>
+            <figure class="soot-3 animate__animated animate__slower animate__pulse animate__infinite">
+                <img src="./assets/noun_Dust Bunny_39107.png" alt="a black soot character from the studio Ghibli Universe">
+            </figure>
+        </div>
     </header>
     <main>
         <section>
@@ -25,7 +37,7 @@
                                 <input type="text" id="user-input" name="user-input" minlength="2" aria-label="Please enter a keyword to find a Studio Ghibli film:">
                             </div>
                             <div class="search-button">
-                                <button id="search"><a href="#results">Find me a movie!</a></button> 
+                                <button id="search">Find me a movie!</button> 
                             </div>
                         </fieldset>
                     </form>
