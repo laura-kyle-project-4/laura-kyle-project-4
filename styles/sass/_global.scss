@@ -2,6 +2,7 @@
 
 $primary-colour: #14aeed;
 $secondary-colour: #02295d;
+$box-background-colour: #86dcd1;
 $primary-text: #000000;
 $secondary-text: #ffffff;
 $text-hover: #ecad82;
@@ -73,7 +74,7 @@ button {
 // hover focus states
 a:hover,
 a:focus {
-  color: #000000;
+  color: $primary-text;
   cursor: pointer;
 }
 
@@ -90,6 +91,9 @@ button:focus {
   border: 5px solid $secondary-colour;
   cursor: pointer;
 }
+
+
+// Responsive styles
 
 @media (max-width: 760px) {
   body {

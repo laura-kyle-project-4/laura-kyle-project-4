@@ -5,10 +5,10 @@ header {
 }
 
 h1 {
-  font-family: "Nanum Gothic", sans-serif;
+
+  font-family: $heading;
   font-size: 7rem;
   color: $secondary-text;
-  color: white;
   font-weight: 800;
   text-align: center;
   width: 100%;
@@ -28,6 +28,9 @@ header figure {
   overflow: hidden;
 }
 
+
+// Styling for Studio Ghibli character icons
+
 .soot-1 {
   top: 0px;
   right: 28px;
@@ -36,6 +39,7 @@ header figure {
 .soot-1 img {
   transform: rotate(47deg);
 }
+
 .soot-2 {
   left: 0px;
   bottom: -10px;
@@ -44,10 +48,12 @@ header figure {
 .soot-2 img {
   transform: rotate(-17deg);
 }
+
 .soot-3 {
   left: 147px;
   top: -78px;
 }
+
 .soot-3 img {
   transform: rotate(180deg);
 }
