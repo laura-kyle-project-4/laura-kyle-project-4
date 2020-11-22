@@ -1,10 +1,19 @@
 footer {
-    background-color: $primary-colour;
-    text-align: center;
-    padding: 20px;
+  background-color: $primary-colour;
+  text-align: center;
+  padding: 20px;
 }
 
 footer p {
-    color: $secondary-text;
+  color: $secondary-text;
+  font-size: 2.2rem;
+}
 
+// footer media queries
+
+@media (max-width: 760px) {
+  footer p {
+    font-size: 1.8rem;
+    line-height: 26px;
+  }
 }

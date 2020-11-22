@@ -111,8 +111,6 @@ app.showGhibli = (ghibiliInfo) => {
             $('#results-container').on('click', 'li', function(){
                 
                 let descriptionFilmTitle = $(this).find("h2").text();
-                
-                console.log(descriptionFilmTitle)
 
                  for (let i = 0; i < ghibiliInfo.length; i++) {
 
@@ -121,10 +119,11 @@ app.showGhibli = (ghibiliInfo) => {
                     if (filmTitle.includes(descriptionFilmTitle)) {
 
                         let insertDescription = `
-                        
-                            <p> ${ghibiliInfo[i].description}</p>
-                            <button id="thanks" class="thanks">Thanks!</button>
-                        
+                            <div>
+                                <h2>${ghibiliInfo[i].title}</h2>
+                                <p>"${ghibiliInfo[i].description}"</p>
+                                <button id="thanks" class="thanks">Thanks!</button>
+                            </div>
                         `
                         $('#description-box').html(insertDescription)
                     }
@@ -140,7 +139,6 @@ app.showGhibli = (ghibiliInfo) => {
         // Create event listener that hides the film description pop-up when clicked
         $('#description-box').on('click', "#thanks", function () {
 
-            console.log("HEY!")
 
             $('#description-box').hide();
         })

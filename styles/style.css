@@ -245,6 +245,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-size: 3rem;
+}
+
 ul {
   list-style: none;
 }
@@ -266,7 +270,7 @@ figure {
 
 .wrapper {
   max-width: 1280px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -278,23 +282,46 @@ p {
   font-family: "Noto Sans KR", sans-serif;
   color: #000000;
   font-weight: 400;
-  font-size: 3rem;
+}
+
+button {
+  padding: 15px 15px;
+  border: none;
+  background-color: #14aeed;
+  border-radius: 15px;
+  border: 5px solid #14aeed;
 }
 
 a:hover,
 a:focus {
-  color: #ecad82;
+  color: #000000;
+  cursor: pointer;
 }
 
-button {
-  padding: 15px 10px;
-  font-size: 3rem;
-  border: none;
+button:hover,
+button:focus {
+  background-color: #02295d;
+  border: 5px solid #000000;
+  color: #ecad82;
+  cursor: pointer;
+}
+
+.search-results li figure:hover,
+.search-results li figure:focus {
+  border: 5px solid #02295d;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 2.3rem;
+  }
 }
 
 header {
   background-color: #14aeed;
-  height: 50vh;
+  padding: 50px 0px;
+  position: relative;
 }
 
 h1 {
@@ -304,15 +331,90 @@ h1 {
   color: white;
   font-weight: 800;
   text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
-  padding: 100px;
-  width: 85%;
+}
+
+header figure {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+.soot-1 {
+  top: 0px;
+  right: 0px;
+}
+
+.soot-1 img {
+  -webkit-transform: rotate(47deg);
+          transform: rotate(47deg);
+}
+
+.soot-2 {
+  left: 0px;
+  bottom: -20px;
+}
+
+.soot-2 img {
+  -webkit-transform: rotate(-17deg);
+          transform: rotate(-17deg);
+}
+
+.soot-3 {
+  left: 147px;
+  top: -78px;
+}
+
+.soot-3 img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+header span {
+  display: block;
 }
 
 @media (max-width: 940px) {
   h1 {
-    padding: 50px;
+    font-size: 5rem;
   }
+  header {
+    padding: 75px 0px;
+  }
+  header figure {
+    width: 125px;
+    height: 125px;
+  }
+  .soot-3 {
+    top: -60px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .soot-3 {
+    left: 30px;
+  }
+}
+
+section {
+  padding: 25px 0px;
 }
 
 .search-section {
@@ -337,14 +439,16 @@ h1 {
 }
 
 label {
-  font-size: 3rem;
   padding-right: 20px;
 }
 
-[type="text"] {
+input[type="text"] {
   padding: 0 50px;
-  font-size: 3rem;
   border: solid black 1px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
 }
 
 fieldset {
@@ -373,6 +477,10 @@ h2 {
 
 .search-results li {
   text-align: center;
+}
+
+.search-results li figure {
+  border: 5px solid #ffffff;
 }
 
 .search-results figure {
@@ -412,7 +520,8 @@ h3 {
   background-color: rgba(20, 174, 237, 0.85);
 }
 
-.error-results div {
+.error-results div,
+.description-box div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -429,16 +538,40 @@ h3 {
   width: 500px;
   margin: 0 auto;
   text-align: center;
-  background-color: #86DCD1;
+  background-color: #86dcd1;
   color: #000000;
+  border: 5px solid black;
+}
+
+.description-box div {
+  width: 75%;
 }
 
 .error-results figure {
   width: 50%;
 }
 
-.error-results button {
+.error-results button,
+.description-box button {
   margin-bottom: 30px;
+}
+
+.description-box p {
+  font-size: 2rem;
+  font-style: italic;
+  padding: 25px;
+  line-height: 40px;
+  text-transform: lowercase;
+}
+
+.description-box h2 {
+  padding-top: 25px;
+}
+
+@media (max-width: 550px) {
+  input[type="text"] {
+    width: 200px;
+  }
 }
 
 footer {
@@ -449,4 +582,12 @@ footer {
 
 footer p {
   color: #ffffff;
+  font-size: 2.2rem;
+}
+
+@media (max-width: 760px) {
+  footer p {
+    font-size: 1.8rem;
+    line-height: 26px;
+  }
 }

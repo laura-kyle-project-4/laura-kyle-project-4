@@ -1,4 +1,7 @@
 // Styles for search section
+section {
+  padding: 25px 0px;
+}
 
 .search-section {
   height: 50vh;
@@ -13,14 +16,16 @@
 }
 
 label {
-  font-size: 3rem;
   padding-right: 20px;
 }
 
-[type="text"] {
+input[type="text"] {
   padding: 0 50px;
-  font-size: 3rem;
   border: solid black 1px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25px;
 }
 
 fieldset {
@@ -42,10 +47,14 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  
 }
+
 .search-results li {
   text-align: center;
+}
+
+.search-results li figure {
+  border: 5px solid #ffffff;
 }
 
 .search-results figure {
@@ -53,7 +62,6 @@ h2 {
   height: 550px;
   margin: 0 auto;
   margin-bottom: 35px;
-
 }
 
 .film-title {
@@ -80,10 +88,10 @@ h3 {
   height: 100vh;
   width: 100vw;
   background-color: rgba($color: $primary-colour, $alpha: 0.85);
-
 }
 
-.error-results div {
+.error-results div,
+.description-box div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,17 +99,40 @@ h3 {
   width: 500px;
   margin: 0 auto;
   text-align: center;
-  background-color: #86DCD1;
-  // background-color: #e06168;
+  background-color: #86dcd1;
   color: $primary-text;
+  border: 5px solid black;
+}
+
+.description-box div {
+  width: 75%;
 }
 
 .error-results figure {
   width: 50%;
 }
 
-.error-results button {
+.error-results button,
+.description-box button {
   margin-bottom: 30px;
 }
 
-// Responsive styles  
+.description-box p {
+  font-size: 2rem;
+  font-style: italic;
+  padding: 25px;
+  line-height: 40px;
+  text-transform: lowercase;
+}
+
+.description-box h2 {
+  padding-top: 25px;
+}
+
+// Responsive styles
+
+@media (max-width: 550px) {
+  input[type="text"] {
+    width: 200px;
+  }
+}

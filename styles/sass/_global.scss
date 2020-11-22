@@ -23,6 +23,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-size: 3rem;
+}
+
 ul {
   list-style: none;
 }
@@ -44,7 +48,7 @@ figure {
 
 .wrapper {
   max-width: 1280px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -56,17 +60,39 @@ p {
   font-family: $text;
   color: $primary-text;
   font-weight: 400;
-  font-size: 3rem;
-}
-
-a:hover,
-a:focus {
-  color: $text-hover;
 }
 
 button {
-  padding: 15px 10px;
-  font-size: 3rem;
+  padding: 15px 15px;
   border: none;
+  background-color: $primary-colour;
+  border-radius: 15px;
+  border: 5px solid $primary-colour;
+}
 
+// hover focus states
+a:hover,
+a:focus {
+  color: #000000;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: $secondary-colour;
+  border: 5px solid #000000;
+  color: $text-hover;
+  cursor: pointer;
+}
+
+.search-results li figure:hover,
+.search-results li figure:focus {
+  border: 5px solid $secondary-colour;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 2.3rem;
+  }
 }

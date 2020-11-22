@@ -1,28 +1,88 @@
 header {
-    background-color: $primary-colour;
-    height: 50vh;
+  background-color: $primary-colour;
+  padding: 50px 0px;
+  position: relative;
 }
 
 h1 {
-    font-family: "Nanum Gothic", sans-serif;
-    font-size: 7rem;
-    color: $secondary-text;
-    color: white;
-    font-weight: 800;
-    text-align: center;
-    margin: 0 auto;
-    padding: 100px;
-    width: 85%;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 7rem;
+  color: $secondary-text;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
 }
 
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 
-// Responsive styles 
+header figure {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+.soot-1 {
+  top: 0px;
+  right: 0px;
+}
+
+.soot-1 img {
+  transform: rotate(47deg);
+}
+.soot-2 {
+  left: 0px;
+  bottom: -20px;
+}
+
+.soot-2 img {
+  transform: rotate(-17deg);
+}
+.soot-3 {
+  left: 147px;
+  top: -78px;
+}
+.soot-3 img {
+  transform: rotate(180deg);
+}
+
+header span {
+  display: block;
+}
+
+// Responsive styles
 
 @media (max-width: 940px) {
-    h1 {
-        padding: 50px;
+  h1 {
+    font-size: 5rem;
+  }
 
-    }
+  header {
+    padding: 75px 0px;
+  }
 
+  header figure {
+    width: 125px;
+    height: 125px;
+  }
 
+  .soot-3 {
+    top: -60px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .soot-3 {
+    left: 30px;
+  }
 }
