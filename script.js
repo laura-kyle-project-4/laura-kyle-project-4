@@ -2,8 +2,9 @@
 
 const app = {}
 
-// this hides the error message until its called on in the if conditional statement
+// this hides the error message + description pop-up until its called on in the if conditional statement
 $('#error-results').hide();
+$('#description-box').hide();
 
 let counter = 0
 
@@ -18,7 +19,7 @@ const ghibliPosters = {
     "porco rosso": "./assets/porco.jpg",
     "pom poko": "./assets/poko.jpg",
     "whisper of the heart": "./assets/whisper.jpg",
-    "princess mononoke": "./assets/mononoke.jfif",
+    "princess mononoke": "./assets/mononoke.jpg",
     "my neighbors the yamadas": "./assets/yamadas.jfif",
     "spirited away": "./assets/spirited.jfif",
     "the cat returns": "./assets/cat.jpg",
@@ -45,103 +46,118 @@ app.getGhibli = (topic) => {
         dataType: 'json',
     }).then((ghibiliInfo) => {
         app.showGhibli(ghibiliInfo);
+        app.showGhibliDescription(ghibiliInfo);
     })
 }
 
 // create an event listener, when the user clicks on the search button the value of the input[type:text].val will be stored in a variable userInput
 // userInput will be used as a argument in a method that searches through the getGhibli array
 
-
 // create a method that will take the user's input and search for it through the API's title and description
 app.showGhibli = (ghibiliInfo) => {
-    console.log(ghibiliInfo);
         $('#search').on('click', (e) => {
             e.preventDefault();
-            console.log('click');
             // clear the results section on click from previous results displayed
-            $("#results-container").html('');
-            counter = 0
+            $('#results-container').html('');
+            noResults = 0
             const keyword = $('#user-input').val().toLowerCase();
-            console.log(keyword)
-
-
+            
             for (let i=0;i<ghibiliInfo.length;i++) {
                 
                 // create variables for the values of the titles and descriptions of each movie in the array object
                 const filmTitle = ghibiliInfo[i].title.toLowerCase();
                 const filmDescription = ghibiliInfo[i].description.toLowerCase();
-                // create a conditional stating if the film title or description values match the keyword variable that was inputed by the user, display the film title, poster, rotten tomatoe score and year filmed
-                if(filmTitle.includes(keyword) || filmDescription.includes(keyword)) {
+                
+                // Error proofing: create a conditional that states if nothing (an empty string) is entered into the search bar, the error pop-up menu is triggered.
+
+                if (keyword === '' || keyword === '!') { 
+                    $('#error-results').show();
+                    
+                    // create a conditional stating if the film title or description values match the keyword variable that was inputed by the user, display the film title, poster, rotten tomatoe score and year filmed
+
+                }  else if (filmTitle.includes(keyword) || filmDescription.includes(keyword)) {
                     let ghibiliResults = `
                             <li>
-                                <h2>${filmTitle}</h2>
+                            <figure><img src=${ghibliPosters[filmTitle]} alt="${filmTitle} poster"></figure>
                                 <div class ="film-title">
-                                    <figure><img src=${ghibliPosters[filmTitle]} alt="${filmTitle} poster"></figure>
-                                    <p>${ghibiliInfo[i].rt_score}</p>
-                                    <p>${ghibiliInfo[i].release_date}</p>
+                                    <h2>${filmTitle}</h2>
+                                    <p>Rotten Tomatoes: ${ghibiliInfo[i].rt_score}</p>
+                                    <p>Release Date: ${ghibiliInfo[i].release_date}</p>
                                 </div>
                             </li>
                         `
-                        // append elements to the results section
-                        
-                        $("#results-container").append(ghibiliResults);
+                    // append elements to the results section
+                    $("#results-container").append(ghibiliResults);
+                
+                    // If no results are found, error pop-up is triggered.  
+
                 } else {
-                    counter = counter + 1
-                    console.log(counter);
-                    if (counter===20){
+                    noResults = noResults + 1
+                    if (noResults === ghibiliInfo.length){
                         $('#error-results').show();
                     }
                 }
-                
+               
             }
         
             $('html').animate({
                 scrollTop: $('#results-container').offset().top
             }, 1000);
         })
-        // create event listener that hides the error-pop when clicked
-        $('#agree').on('click', function() {
-            $('#error-results').hide();
+
+        app.showGhibliDescription = (ghibiliInfo) => { 
+
+        // create event listener on image ul that triggers film description pop-up 
+            $('#results-container').on('click', 'li', function(){
+                
+                let descriptionFilmTitle = $(this).find("h2").text();
+                
+                console.log(descriptionFilmTitle)
+
+                 for (let i = 0; i < ghibiliInfo.length; i++) {
+
+                     const filmTitle = ghibiliInfo[i].title.toLowerCase();
+
+                    if (filmTitle.includes(descriptionFilmTitle)) {
+
+                        let insertDescription = `
+                        
+                            <p> ${ghibiliInfo[i].description}</p>
+                            <button id="thanks" class="thanks">Thanks!</button>
+                        
+                        `
+                        $('#description-box').html(insertDescription)
+                    }
+
+                 }
+
+                $('#description-box').show();
+
+            })
+
+        }
+
+        // Create event listener that hides the film description pop-up when clicked
+        $('#description-box').on('click', "#thanks", function () {
+
+            console.log("HEY!")
+
+            $('#description-box').hide();
         })
 }
+        // create event listener that hides the error pop-up when clicked
+        $('#agree').on('click', function () {
+            $('#error-results').hide();
+        })
 
 
-
-app.init = function() {
-    console.log('App is inititalized!')
-}
-
+    app.init = function() {
+        app.getGhibli('films');
+        app.showGhibliDescription();
+        app.showGhibli();
+    }
 
 $(function() {
-    console.log('document is ready')
     app.init();
-    app.getGhibli('films');
 });
 
-// create a app that will store the 
-
-
-
-
-
-
-
-
-
-
-
-// landing page with a header, and some studio ghibili related animations
-//  a p tag directing users to input keywords to search through the studio ghibili library
-
-// A search bar that takes user's input and will parse through a studio ghibili API to locate movies based on movie titles and descriptions. 
-// Add a button called search
-
-// The search button will trigger an event listener, which will look through our API's film endpoint and search the objects title, description
-
-// If the user's input matches a keyword in  the APi's movie title or description, display that movie below the search bar with the movie poster, description, release date, rotten tomatoe score.
-
-// If the user's input doesn't match anything in the API,  create pop-up that indicates the user's input was not found, and recommend them keywords that we know will be recognized by the API. Have a button to exit the pop-up menu
-
-// stretch goals
-// To add a gallery that randomly displays 3 movies from the API list (use Math.Random)
-// A secondary search/category app

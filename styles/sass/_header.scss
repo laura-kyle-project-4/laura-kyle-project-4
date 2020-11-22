@@ -6,11 +6,23 @@ header {
 h1 {
     font-family: "Nanum Gothic", sans-serif;
     font-size: 7rem;
-    text-align: center;
-    color: $text-colour;
+    color: $secondary-text;
+    color: white;
     font-weight: 800;
-    margin: 0;
+    text-align: center;
+    margin: 0 auto;
     padding: 100px;
+    width: 85%;
 }
 
 
+// Responsive styles 
+
+@media (max-width: 940px) {
+    h1 {
+        padding: 50px;
+
+    }
+
+
+}
