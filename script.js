@@ -91,7 +91,6 @@ app.showGhibli = (ghibiliInfo) => {
     })
 }
 app.showGhibliDescription = (ghibiliInfo) => { 
-    console.log(ghibiliInfo);
 
 // create event listener on image ul that triggers film description pop-up 
     $('#results-container').on('click', 'li', function(){
