@@ -12,7 +12,6 @@ h1 {
   font-weight: 800;
   text-align: center;
   width: 100%;
-  z-index: 5;
 }
 
 header div {
@@ -26,11 +25,12 @@ header figure {
   width: 150px;
   height: 150px;
   position: absolute;
+  overflow: hidden;
 }
 
 .soot-1 {
   top: 0px;
-  right: 0px;
+  right: 28px;
 }
 
 .soot-1 img {
@@ -38,7 +38,7 @@ header figure {
 }
 .soot-2 {
   left: 0px;
-  bottom: -20px;
+  bottom: -10px;
 }
 
 .soot-2 img {

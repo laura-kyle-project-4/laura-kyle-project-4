@@ -318,6 +318,13 @@ button:focus {
   }
 }
 
+@media (max-width: 550px) {
+  button {
+    font-size: 2rem;
+    padding: 10px 5px;
+  }
+}
+
 header {
   background-color: #14aeed;
   padding: 50px 0px;
@@ -332,7 +339,6 @@ h1 {
   font-weight: 800;
   text-align: center;
   width: 100%;
-  z-index: 5;
 }
 
 header div {
@@ -352,11 +358,12 @@ header figure {
   width: 150px;
   height: 150px;
   position: absolute;
+  overflow: hidden;
 }
 
 .soot-1 {
   top: 0px;
-  right: 0px;
+  right: 28px;
 }
 
 .soot-1 img {
@@ -366,7 +373,7 @@ header figure {
 
 .soot-2 {
   left: 0px;
-  bottom: -20px;
+  bottom: -10px;
 }
 
 .soot-2 img {
@@ -484,7 +491,7 @@ h2 {
 }
 
 .search-results figure {
-  max-width: 350px;
+  max-width: 450px;
   height: 550px;
   margin: 0 auto;
   margin-bottom: 35px;
@@ -495,7 +502,6 @@ h2 {
 }
 
 h3 {
-  font-family: #000000;
   font-size: 3rem;
   padding: 30px 0px;
   width: 80%;
@@ -535,7 +541,6 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 500px;
   margin: 0 auto;
   text-align: center;
   background-color: #86dcd1;
@@ -545,6 +550,12 @@ h3 {
 
 .description-box div {
   width: 75%;
+}
+
+.error-results div {
+  max-width: 500px;
+  width: 80%;
+  min-width: 250px;
 }
 
 .error-results figure {
@@ -571,6 +582,16 @@ h3 {
 @media (max-width: 550px) {
   input[type="text"] {
     width: 200px;
+  }
+  .search-results figure {
+    max-width: 250px;
+    height: 350px;
+  }
+  .description-box p {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 2.2rem;
   }
 }
 
